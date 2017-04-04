@@ -1,7 +1,9 @@
-package com.happyday.z.myweather;
+package com.happyday.z.myweather.View;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.happyday.z.myweather.R;
 
 public class MainActivity extends AppCompatActivity {
 
