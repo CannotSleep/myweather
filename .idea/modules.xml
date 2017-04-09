@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/testbaidumap/testbaidumap.iml" filepath="$PROJECT_DIR$/testbaidumap/testbaidumap.iml" />
       <module fileurl="file://$PROJECT_DIR$/testedittext/testedittext.iml" filepath="$PROJECT_DIR$/testedittext/testedittext.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testuser/testuser.iml" filepath="$PROJECT_DIR$/testuser/testuser.iml" />
     </modules>
   </component>
 </project>

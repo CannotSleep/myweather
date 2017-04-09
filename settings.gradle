@@ -1,1 +1,1 @@
-include ':app', ':testedittext', ':testbaidumap'
+include ':app', ':testedittext', ':testbaidumap', ':testuser'

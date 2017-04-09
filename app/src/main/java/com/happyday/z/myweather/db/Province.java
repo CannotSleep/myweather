@@ -1,10 +1,12 @@
 package com.happyday.z.myweather.db;
 
+import org.litepal.crud.DataSupport;
+
 /**
  * Created by Z on 2017/4/4.
  */
 
-public class Province {
+public class Province extends DataSupport {
     //数据库主键
     private int id;
     //省份名称

@@ -1,13 +1,15 @@
 package com.happyday.z.myweather.db;
 
+import org.litepal.crud.DataSupport;
+
 /**
  * Created by Z on 2017/4/4.
  */
 
-public class Country {
+public class Country extends DataSupport {
     private int id;
     private String countryname;
-    private int countrycode;
+    private int cityId;
     private String weather_id;
 
     public int getId() {
@@ -26,12 +28,12 @@ public class Country {
         this.countryname = countryname;
     }
 
-    public int getCountrycode() {
-        return countrycode;
+    public int getCityId() {
+        return cityId;
     }
 
-    public void setCountrycode(int countrycode) {
-        this.countrycode = countrycode;
+    public void setCityId(int countrycode) {
+        this.cityId = countrycode;
     }
 
     public String getWeather_id() {
