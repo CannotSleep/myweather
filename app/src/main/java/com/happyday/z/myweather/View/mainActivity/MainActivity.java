@@ -1,6 +1,9 @@
 package com.happyday.z.myweather.View.mainActivity;
 
 
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -14,10 +17,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        FragmentManager manager = getSupportFragmentManager();
-//        FragmentTransaction transaction = manager.beginTransaction();
-//        ChooseAreaFragment fragment1 = new ChooseAreaFragment();
-//        transaction.add(R.id.main_fragment, fragment1);
-//        transaction.commit();
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        if(prefs.getString("weather",null)!=null){
+            Intent intent  = new Intent(this,WeatherActivity.class);
+            startActivity(intent);
+            finish();
+        }
     }
 }
