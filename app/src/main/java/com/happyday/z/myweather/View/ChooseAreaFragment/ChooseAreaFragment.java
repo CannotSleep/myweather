@@ -2,7 +2,9 @@ package com.happyday.z.myweather.View.ChooseAreaFragment;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -20,6 +22,7 @@ import android.widget.Toast;
 import com.happyday.z.myweather.R;
 import com.happyday.z.myweather.Util.HttpUtil;
 import com.happyday.z.myweather.Util.Utility;
+import com.happyday.z.myweather.View.mainActivity.MainActivity;
 import com.happyday.z.myweather.View.mainActivity.WeatherActivity;
 import com.happyday.z.myweather.db.City;
 import com.happyday.z.myweather.db.Country;
@@ -98,10 +101,17 @@ public class ChooseAreaFragment extends Fragment {
                     queryCounties();
                 }else if(currentLevel==LEVEL_COUNTY){
                     String weatherId= countryList.get(position).getWeather_id();
-                    Intent intent = new Intent(getActivity(), WeatherActivity.class);
-                    intent.putExtra("weather_id",weatherId);
-                    startActivity(intent);
-                    getActivity().finish();
+                    if(getActivity()instanceof MainActivity){
+                        Intent intent = new Intent(getActivity(), WeatherActivity.class);
+                        intent.putExtra("weather_id",weatherId);
+                        startActivity(intent);
+                        getActivity().finish();
+                    }else if(getActivity() instanceof WeatherActivity){
+                        WeatherActivity activity = (WeatherActivity) getActivity();
+                        activity.drawerLayout.closeDrawers();
+                        activity.swipeRefreshLayout.setRefreshing(true);
+                        activity.requestWeather(weatherId);
+                    }
                 }
             }
         });
